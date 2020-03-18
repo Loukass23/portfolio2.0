@@ -1,0 +1,277 @@
+$primary-color: #A37;
+$raindowtext: linear-gradient(40deg, #97178c 0%, #d6716d 50%, #a0fafb 100%);
+$whitish-text : #c6c8ce;
+
+#title {
+  color: $primary-color;
+}
+
+.loader {
+  
+    position: absolute;
+    z-index: 11;
+    top: 100;
+    left: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+     background-color: #0a0a0a; 
+}
+.loader__title {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+}
+.loader__progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 10px;
+  background-color: #fff;
+}
+main{
+  background-color: black;
+}
+
+body {
+  height: 100%;
+  --color-text: #fff;
+  background-color: #000;
+  --color-link: #697c7e;
+  --color-link-hover: #fff;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  min-height: 10000px;
+  margin: 0;
+}
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+
+}
+
+.links>a {
+  padding: 30px;
+  color: $whitish-text;
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.arrow {
+  color: $primary-color;
+}
+
+
+.frame {
+  position: fixed;
+  top: 10;
+  width: 100%;
+  text-align: center;
+  z-index: 1000;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+}
+
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  will-change: opacity;
+  opacity: 0;
+}
+
+.header__title {
+  font-size: 6rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+  letter-spacing: 0.15rem;
+  background: linear-gradient(40deg, #97178c 0%, #d6716d 50%, #a0fafb 100%);
+  background-size: cover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-weight: 100;
+  letter-spacing: 0.5vw;
+
+}
+
+.header__text {
+  font-size: 2rem;
+
+  color: $whitish-text;
+}
+
+
+
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  z-index: 1;
+  will-change: opacity;
+  opacity: 0;
+  top: 0;
+  line-height: 1.2;
+  font-size: 1.5rem;
+  text-align: center;
+  color: white;
+  max-width: calc(100% - 80px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 40px;
+}
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+.hover-box {
+	position: relative;
+	display: inline-block;
+	margin: 20px;
+	max-width: 190px;
+	width: 100%;
+	color: #bbb;
+	font-size: 16px;
+	box-shadow: none !important;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+}
+.hover-box *, .hover-box:before, .hover-box:after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+}
+.hover-box:before, .hover-box:after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	border-radius: 50%;
+	content: '';
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: -1;
+	border: 2px solid #bbb;
+	border-color: transparent #bbb;
+}
+.hover-box img {
+	max-width: 100%;
+	backface-visibility: hidden;
+	vertical-align: top;
+	// border-radius: 50%;
+	padding: 10px;
+}
+.hover-box figcaption {
+	position: absolute;
+	top: 5px;
+	bottom: 5px;
+	left: 5px;
+	right: 5px;
+	opacity: 0;
+	background-color: rgba(0, 0, 0, 0.9);
+	// border-radius: 50%;
+}
+.hover-box i {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	font-size: 4em;
+	z-index: 1;
+}
+.hover-box a {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+}
+.hover-box:hover figcaption{
+	opacity: 1;
+	-webkit-transform: translateX(0);
+	transform: translateX(0);
+}
+.hover-box:hover:before, .hover-box:hover:after {
+	border-width: 10px;
+}
+.hover-box:hover:before {
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.hover-box:hover:after {
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+.projects {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  flex-wrap: wrap;
+  z-index: 9999;
+}
+
+
+.chrome {
+	background: #222 -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff)) 0 0 no-repeat;
+	background-image: -webkit-linear-gradient(-40deg, transparent 0%, transparent 40%, #fff 50%, transparent 60%, transparent 100%);
+	-webkit-background-size: 200px;
+color: $raindowtext;
+	-webkit-background-clip: text;
+	-webkit-animation-name: shine;
+	-webkit-animation-duration: 5s;
+	-webkit-animation-iteration-count: infinite;
+	text-shadow: 0 0px 0px rgba(255, 255, 255, 0.5);
+}
+
+@-webkit-keyframes shine {
+	0%, 10% {
+		background-position: -1000px;
+	}
+	20% {
+		background-position: top left;
+	}
+	90% {
+		background-position: top right;
+	}
+	100% {
+		background-position: 1000px;
+	}
+}
