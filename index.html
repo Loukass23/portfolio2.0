@@ -5,6 +5,7 @@
   <title>Lucas Dupias</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#EFEFEF">
+  <link rel="icon" href="./assets/cube-solid.png">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,400" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
   integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
@@ -15,14 +16,14 @@
   <main>
     <div class="frame">
       <div class="links">
-        <a target="_blank">
-          <i class="fas fa-3x fa-portrait"></i>
+        <a href="https://www.linkedin.com/in/lucasdupias" target="_blank">
+          <i class="fas fa-3x fa-caret-square-down"></i>
         </a>
         <a href="https://www.linkedin.com/in/lucasdupias" target="_blank">
           <i class="fab fa-3x fa-linkedin"></i>
         </a>
         <a href="https://github.com/Loukass23" target="_blank">
-          <i class="fab fa-3x fa-github"></i>
+          <i class="fab fa-3x fa-github-square"></i>
         </a>
       </div>
     </div>
@@ -36,7 +37,7 @@
         <p class="header__text chrome"> Web Developer</p>
         <span class="arrow"><i class="fa fa-angle-down" style="font-size:50px"></i></span>
       </div>
-      <div class="heading">
+      <div class="heading" id="skills">
         <table className="table striped centered responsive-table">
           <thead className="">
             <tr>
@@ -79,33 +80,36 @@
           </tbody>
         </table>
       </div>
-      <div class="heading">
-        Projects
+      <div class="heading" id="projects">
+       <h1>Projects</h1> 
         <div class="projects">
-        <figure class="hover-box">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample14.jpg" alt="sq-sample14">
-          <figcaption><i class="ion-android-add"></i></figcaption>
-          <a href="#"></a>
-        </figure>
-        <figure class="hover-box">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample17.jpg" alt="sq-sample17">
-          <figcaption><i class="ion-android-open"></i></figcaption>
-          <a href="#"></a>
-        </figure>
-        <figure class="hover-box">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample19.jpg" alt="sq-sample19">
-          <figcaption><i class="ion-android-star-outline"></i></figcaption>
-          <a href="#"></a>
-        </figure>
-        <figure class="hover-box">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample20.jpg" alt="sq-sample20">
-          <figcaption><i class="ion-android-stopwatch"></i></figcaption>
-          <a href="#"></a>
-        </figure>
+        <div class="project">
+          <div class="overlay">
+            <div class="text">Hello World</div>
+          </div>
+          <video className="video-fluid pr-2" width="auto" height="100%" controls autoPlay={true} loop muted>
+            <source src="./assets/img/football app.mp4" type="video/mp4" />
+        </video>
+        </div>
+        <div class="project">
+          <div class="overlay">
+            <div class="text">Hello </div>
+          </div>
+        </div>
+        <div class="project">
+          <div class="overlay">
+            <div class="text"> World</div>
+          </div>
+        </div>
+        <div class="project">
+          <div class="overlay">
+            <div class="text">Hell World</div>
+          </div>
+        </div>
         </div>
       </div>
-      <div class="heading">Experience</div>
-      <div class="heading">Contact</div>
+      <div class="heading" id="experience">Experience</div>
+      <div class="heading" id="contact">Contact</div>
     </div>
   </main>
 

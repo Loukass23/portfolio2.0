@@ -152,11 +152,11 @@ export default () => {
     createInstance({
       geometry: new THREE.BoxGeometry(2, 2, 2),
       material: new THREE.MeshStandardMaterial({
-        color: "#6c07bf",
-        emissive: "#212121",
+        color: '#6c07bf',
+        emissive: '#212121',
         flatShading: true,
         roughness: 0.1,
-        metalness: 0.7
+        metalness: 0.7,
       }),
       multiplier: 20,
       duration: 0.8,
@@ -170,6 +170,7 @@ export default () => {
     createInstance({
       geometry: new THREE.BoxGeometry(1, 1, 1),
       material: new THREE.MeshPhongMaterial({
+        color: '#d6716d',
         emissive: hcfp(0.5 / 3),
         specular: '#efefef',
         shininess: 20,
@@ -187,6 +188,7 @@ export default () => {
     createInstance({
       geometry: new THREE.BoxGeometry(1, 1, 1),
       material: new THREE.MeshPhongMaterial({
+        color: '#a0fafb',
         emissive: hcfp(1.5 / 3),
         specular: '#000000',
         shininess: 10,
@@ -210,7 +212,7 @@ export default () => {
         shininess: 20,
         flatShading: true,
       }),
-      multiplier: 400,
+      multiplier: 40,
       duration: 0.4,
       points: [
         () => getArrayWithNoise([0, 0, 0], 10),
@@ -244,16 +246,17 @@ export default () => {
   // props.scene.add(lights[1]);
   // props.scene.add(lights[2]);
 
-  // const geometry = new THREE.BoxGeometry(5, 5, 5);
-  // const material = new THREE.MeshPhongMaterial({
-  //   color: 0xFFC107,
-  //   emissive: 0x00BFA5,
-  //   side: THREE.DoubleSide,
-  //   shading: THREE.FlatShading,
-  // });
-
-  // props.structure.cube = new THREE.Mesh(geometry, material);
-  // props.scene.add(props.structure.cube);
+  const geometry = new THREE.BoxGeometry(4, 4, 4);
+  const material = new THREE.MeshStandardMaterial({
+    color: '#6c07bf',
+    emissive: '#212121',
+    flatShading: true,
+    roughness: 0.1,
+    metalness: 0.7,
+  });
+  props.structure.cube = new THREE.Mesh(geometry, material);
+  props.structure.cube.rotation.y = -0.45
+  props.scene.add(props.structure.cube);
   props.phenomenons = instances;
   initUOS();
 };

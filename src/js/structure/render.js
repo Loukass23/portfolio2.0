@@ -6,6 +6,8 @@ import uos from 'uos';
 
 export default function render() {
   props.renderer.render(props.scene, props.camera);
+  props.structure.cube.rotation.x += -0.04
+
 }
 const windowResizeHandler = () => {
   props.camera.aspect = window.innerWidth / window.innerHeight;
@@ -38,6 +40,12 @@ export const initUOS = () => {
       let np = p * 2.0 - 1.0;
       np = 1.0 - np * np;
       headings[i].style.opacity = i === instances.length - 1 ? p * 1.5 : np * 1.5;
+      if (headings[1].style.opacity > .3) {
+        console.log('object');
+       props.structure.cube.visible = true;
+      }
+      else  props.structure.cube.visible = false;
+      console.log('headings[i].id :', headings[i].id);
     });
   }
   loader.style.opacity = 0;
@@ -47,7 +55,6 @@ export const initUOS = () => {
     header.style.opacity = 1;
   });
 };
-
 
 
 window.addEventListener('resize', windowResizeHandler, false);
