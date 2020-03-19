@@ -129,14 +129,14 @@ function createInstance({
     multiplier,
     material,
     fragment,
-  }
+  };
 
   const instance = new Phenomenon(instProps);
   props.scene.add(instance.mesh);
   return instance;
 }
 
-export default () => {  
+export default () => {
   const ambientLight = new THREE.AmbientLight('#ffffff', 0.5);
   props.scene.add(ambientLight);
 
@@ -226,13 +226,13 @@ export default () => {
    * Build the environment.
    */
   // export default () => {
-    // const ambientLight = new THREE.AmbientLight('#ffffff', 0.1);
-    // props.scene.add(ambientLight);
+  // const ambientLight = new THREE.AmbientLight('#ffffff', 0.1);
+  // props.scene.add(ambientLight);
 
-    // const light = new THREE.SpotLight(0xffffff, 1, 80, Math.PI * 0.25, 1, 2);
-    // light.position.set(0, 40, 0);
+  // const light = new THREE.SpotLight(0xffffff, 1, 80, Math.PI * 0.25, 1, 2);
+  // light.position.set(0, 40, 0);
 
-    // props.scene.add(light);
+  // props.scene.add(light);
   // const lights = [];
   // lights[0] = new THREE.PointLight(0xffffff, 0.2, 0);
   // lights[1] = new THREE.PointLight(0xffffff, 0.2, 0);
@@ -246,16 +246,17 @@ export default () => {
   // props.scene.add(lights[1]);
   // props.scene.add(lights[2]);
 
-  const geometry = new THREE.BoxGeometry(4, 4, 4);
-  const material = new THREE.MeshStandardMaterial({
-    color: '#6c07bf',
-    emissive: '#212121',
-    flatShading: true,
-    roughness: 0.1,
-    metalness: 0.7,
-  });
-  props.structure.cube = new THREE.Mesh(geometry, material);
-  props.structure.cube.rotation.y = -0.45
+  const geometry = new THREE.BoxGeometry(1, 1, 1);
+
+  props.structure.cube = new THREE.LineSegments(
+    new THREE.EdgesGeometry(geometry),
+    new THREE.LineBasicMaterial(),
+
+  );
+
+  // props.structure.cube = new THREE.Mesh(geometry, material);
+  // props.structure.cube.rotation.y = -0.6
+  props.structure.cube.position.set(15, 12.5, 0);
   props.scene.add(props.structure.cube);
   props.phenomenons = instances;
   initUOS();

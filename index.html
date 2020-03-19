@@ -8,7 +8,7 @@
   <link rel="icon" href="./assets/cube-solid.png">
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,400" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-  integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 </head>
 
@@ -35,7 +35,11 @@
       <div class="header">
         <h1 class="header__title">Lucas Dupias</h1>
         <p class="header__text chrome"> Web Developer</p>
-        <span class="arrow"><i class="fa fa-angle-down" style="font-size:50px"></i></span>
+        <div class="arrow-down">
+          <span class="arrow-sm"><i class="fa fa-angle-down" style="font-size:50px"></i></span>
+          <span class="arrow-lg"><i class="fa fa-angle-down" style="font-size:80px"></i></span>
+          <span class="arrow-sm"><i class="fa fa-angle-down" style="font-size:50px"></i></span>
+        </div>
       </div>
       <div class="heading" id="skills">
         <table className="table striped centered responsive-table">
@@ -81,35 +85,60 @@
         </table>
       </div>
       <div class="heading" id="projects">
-       <h1>Projects</h1> 
+        <h1>Projects</h1>
         <div class="projects">
-        <div class="project">
-          <div class="overlay">
-            <div class="text">Hello World</div>
+          <div class="project">
+            <div class="overlay">
+              <ul className='mx-auto text-black-50'>
+                <li>Work in Progress</li>
+                <li>Instagram API</li>
+                <li>User signIn</li>
+                <li>Image upload and conpressing</li>
+                <li>Firebase(server functions, database, storage)</li>
+                <li>Javascript, React.js/Redux , HTML, CSS, Materialize</li>
+              </ul>
+            </div>
+
+            <div class="project-details">
+              <!-- <h4>Football Web App</h4> -->
+              <video className="video-fluid pr-2" width="auto" height=80%" controls autoPlay={true} loop muted>
+                <source src="./assets/img/football app.mp4" type="video/mp4" />
+              </video>
+              <div class="icons">
+                <i class="fab fa-2x fa-vuejs"></i>
+                <i class="fab fa-2x fa-css3"></i>
+                <i class="fab fa-2x fa-js"></i>
+                <i class="fab fa-2x fa-html5"></i>
+              </div>
+
+            </div>
           </div>
-          <video className="video-fluid pr-2" width="auto" height="100%" controls autoPlay={true} loop muted>
-            <source src="./assets/img/football app.mp4" type="video/mp4" />
-        </video>
-        </div>
-        <div class="project">
-          <div class="overlay">
-            <div class="text">Hello </div>
+          <div class="project">
+            <div class="overlay">
+              <div class="text">Hello </div>
+            </div>
           </div>
-        </div>
-        <div class="project">
-          <div class="overlay">
-            <div class="text"> World</div>
+          <div class="project">
+            <div class="overlay">
+              <div class="text"> World</div>
+            </div>
           </div>
-        </div>
-        <div class="project">
-          <div class="overlay">
-            <div class="text">Hell World</div>
+          <div class="project">
+            <div class="overlay">
+              <div class="text">Hell World</div>
+            </div>
           </div>
-        </div>
         </div>
       </div>
       <div class="heading" id="experience">Experience</div>
-      <div class="heading" id="contact">Contact</div>
+      <div class="heading" id="contact">
+        <p>Contact</p>
+        <div class="arrow-down">
+          <span class="arrow-sm"><i class="fa fa-angle-up" style="font-size:50px"></i></span>
+          <span class="arrow-lg"><i class="fa fa-angle-up" style="font-size:80px"></i></span>
+          <span class="arrow-sm"><i class="fa fa-angle-up" style="font-size:50px"></i></span>
+        </div>
+      </div>
     </div>
   </main>
 

@@ -46,7 +46,7 @@ const createRenderer = () => {
 const createCamera = () => {
   props.camera =
     new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 0.1, 10000);
-  props.camera.position.set(0, 20 * 1, 35 * 1);
+  props.camera.position.set(0, 0, 40);
   props.camera.lookAt(props.scene.position);
   props.scene.add(props.camera);
 
