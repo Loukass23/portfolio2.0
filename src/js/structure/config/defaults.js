@@ -32,4 +32,6 @@ export default {
 
   phenomenons: {},
 
+  backgroundParticlesGroup: {},
+
 };

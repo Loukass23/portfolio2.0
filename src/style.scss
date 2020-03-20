@@ -253,7 +253,13 @@ canvas {
 
 }
 
+.carousel-indicators {
+  position: relative;
+}
+
 .project {
+
+
   display: flex;
   justify-content: space-around;
   align-items: center;

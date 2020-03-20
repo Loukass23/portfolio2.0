@@ -21,6 +21,44 @@ function hcfp(percent) {
 function getRandomFromArray(array) {
   return array[Math.floor(Math.random() * array.length)];
 }
+function random(low, high, round) {
+  round = round || false;
+
+  const randomValue = Math.random() * (high - low) + low;
+
+  if (round) {
+    return Math.floor(randomValue);
+  }
+
+  return randomValue;
+}
+function particleBG(parameters) {
+  const material = new THREE.PointCloudMaterial({
+    size: parameters.particleSize,
+  });
+  const geometry = new THREE.Geometry();
+  for (let i = 0; i < parameters.count; i++) {
+    const particle = new THREE.Vector3(random(-50, 50), random(parameters.rangeY[0], parameters.rangeY[1]), random(-50, 100));
+    geometry.vertices.push(particle);
+  }
+  const group = new THREE.Object3D();
+  group.add(new THREE.PointCloud(geometry, material));
+  if (parameters.strips) {
+    const stripsGeometry = new THREE.Geometry();
+    const stripGeometry = new THREE.PlaneGeometry(5, 2);
+    const stripMaterial = new THREE.MeshLambertMaterial({ color: '#666666' });
+    for (let i = 0; i < parameters.stripsCount; i++) {
+      const stripMesh = new THREE.Mesh(stripGeometry, stripMaterial);
+      stripMesh.position.set(random(-50, 50), random(parameters.rangeY[0], parameters.rangeY[1]), random(-50, 0));
+      stripMesh.scale.set(random(0.5, 1), random(0.1, 1), 1);
+      stripMesh.updateMatrix();
+      stripsGeometry.merge(stripMesh.geometry, stripMesh.matrix);
+    }
+    const totalMesh = new THREE.Mesh(stripsGeometry, stripMaterial);
+    group.add(totalMesh);
+  }
+  return group;
+}
 
 function createInstance({
   rainbow = false,
@@ -249,6 +287,16 @@ export default () => {
     new THREE.LineBasicMaterial(),
 
   );
+
+  props.backgroundParticlesGroup = particleBG({
+    count: 1000,
+    particleSize: 0.5,
+    rangeY: [-1000, 0],
+    strips: true,
+    stripsCount: 20,
+  });
+
+  props.scene.add(props.backgroundParticlesGroup);
 
   // props.structure.cube = new THREE.Mesh(geometry, material);
   // props.structure.cube.rotation.y = -0.6

@@ -4,9 +4,23 @@
 import props from './config/defaults';
 import uos from 'uos';
 
+let scroll = 0;
+
 export default function render() {
+
   props.renderer.render(props.scene, props.camera);
-  props.structure.cube.rotation.x -= 0.05;
+  console.log('scroll :', scroll);
+  console.log('props.backgroundParticlesGroup.position.y :', props.backgroundParticlesGroup.position.y);
+  if (props.backgroundParticlesGroup.position.y <= scroll) {
+    props.structure.cube.rotation.x -= 0.05;
+    props.backgroundParticlesGroup.position.y -= .1;
+    scroll = props.backgroundParticlesGroup.position.y
+  }
+  else {
+    props.structure.cube.rotation.x += 0.05;
+    props.backgroundParticlesGroup.position.y += .1;
+    scroll = props.backgroundParticlesGroup.position.y
+  }
 }
 const windowResizeHandler = () => {
   props.camera.aspect = window.innerWidth / window.innerHeight;
@@ -27,12 +41,10 @@ export const initUOS = () => {
 
   uos(0, 0.05, p => (header.style.opacity = 1 - p));
   uos(0, 1, p => {
-    console.log('p&', p);
     if (p < .8) {
       props.structure.cube.position.set(window.innerWidth / 70, 12.5 - p * window.innerHeight / 32, 0);
     }
     // props.structure.cube.translation.y += p
-    console.log('window.innerHeight / 70 :', window.innerWidth);
 
   });
 
@@ -52,7 +64,6 @@ export const initUOS = () => {
         props.structure.cube.visible = true;
       }
       else props.structure.cube.visible = false;
-      console.log('headings[i].id :', headings[i].id);
     });
   }
   loader.style.opacity = 0;
