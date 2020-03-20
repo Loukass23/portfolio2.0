@@ -144,10 +144,6 @@ export default () => {
   light.position.set(0, 40, 0);
 
   props.scene.add(light);
-
-
-
-
   const instances = [
     createInstance({
       geometry: new THREE.BoxGeometry(2, 2, 2),
@@ -258,6 +254,7 @@ export default () => {
   // props.structure.cube.rotation.y = -0.6
   props.structure.cube.position.set(15, 12.5, 0);
   props.scene.add(props.structure.cube);
+  props.structure.cube.visible = false;
   props.phenomenons = instances;
   initUOS();
 };

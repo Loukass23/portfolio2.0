@@ -9,11 +9,12 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,400" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
     integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 <body>
-  <main>
+  <main id="top">
     <div class="frame">
       <div class="links">
         <a href="https://www.linkedin.com/in/lucasdupias" target="_blank">
@@ -27,15 +28,16 @@
         </a>
       </div>
     </div>
-    <div class="loader">
+    <!-- <div class="loader">
       <h3 class="text--center text--white loader__title is-active"> LOADING </h3>
       <div class="loader__progress"></div>
-    </div>
+    </div> -->
     <div class="content content--canvas">
-      <div class="header">
+      <div class="header" id="header">
         <h1 class="header__title">Lucas Dupias</h1>
         <p class="header__text chrome"> Web Developer</p>
-        <div class="arrow-down">
+
+        <div class="arrow-down" href="#skills">
           <span class="arrow-sm"><i class="fa fa-angle-down" style="font-size:50px"></i></span>
           <span class="arrow-lg"><i class="fa fa-angle-down" style="font-size:80px"></i></span>
           <span class="arrow-sm"><i class="fa fa-angle-down" style="font-size:50px"></i></span>
@@ -84,64 +86,95 @@
           </tbody>
         </table>
       </div>
-      <div class="heading" id="projects">
-        <h1>Projects</h1>
-        <div class="projects">
-          <div class="project">
-            <div class="overlay">
-              <ul className='mx-auto text-black-50'>
-                <li>Work in Progress</li>
-                <li>Instagram API</li>
-                <li>User signIn</li>
-                <li>Image upload and conpressing</li>
-                <li>Firebase(server functions, database, storage)</li>
-                <li>Javascript, React.js/Redux , HTML, CSS, Materialize</li>
-              </ul>
+      <div class="heading row" id="projects">
+        <h4>Projects</h4>
+        <div class="projects col-xs-12">
+          <a class="carousel-control-prev" href="#carouselProjects" role="button" data-slide="prev">
+            <div class="arrow-down arr-side">
+              <span class="arrow-sm"><i class="fa fa-angle-left" style="font-size:50px"></i></span>
+              <span class="arrow-lg"><i class="fa fa-angle-left" style="font-size:80px"></i></span>
+              <span class="arrow-sm"><i class="fa fa-angle-left" style="font-size:50px"></i></span>
             </div>
+          </a>
+          <div id="carouselProjects" class="carousel slide" data-pause="hover" data-keyboard="true" data-touch="true"
+            au>
+            <ol class="carousel-indicators">
+              <li data-target="#carouselProjects" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselProjects" data-slide-to="1"></li>
+              <li data-target="#carouselProjects" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active row project">
 
-            <div class="project-details">
-              <!-- <h4>Football Web App</h4> -->
-              <video className="video-fluid pr-2" width="auto" height=80%" controls autoPlay={true} loop muted>
-                <source src="./assets/img/football app.mp4" type="video/mp4" />
-              </video>
-              <div class="icons">
-                <i class="fab fa-2x fa-vuejs"></i>
-                <i class="fab fa-2x fa-css3"></i>
-                <i class="fab fa-2x fa-js"></i>
-                <i class="fab fa-2x fa-html5"></i>
+                <div class="col-xs-12 col-md-8">
+
+                </div>
+                <div class="col-sx-12 col-md-4">
+                  <video className="video-fluid pr-2" width="30%" height="20%" controls autoPlay={true} loop muted>
+                    <source src={FootVideo} type="video/mp4" />
+                  </video>
+                </div>
+
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>First slide label</h5>
+                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                </div>
               </div>
+              <div class="carousel-item">
+                <div class="row project">
 
+                  <div class="col-xs-12 col-md-8">.col-12 .col-md-8
+
+                  </div>
+                  <div class="col-sx-12 col-md-4">
+                    <img src="./assets/img/bookstore.jpg" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row project">
+
+                <div class="col-xs-12 col-md-8">.col-12 .col-md-8
+
+                </div>
+                <div class="col-sx-12 col-md-4">
+                  <img src="./assets/img/bookstore.jpg" class="d-block w-100" alt="...">
+                </div>
+              </div>
             </div>
           </div>
-          <div class="project">
-            <div class="overlay">
-              <div class="text">Hello </div>
+          <a class="carousel-control-next" href="#carouselProjects" role="button" data-slide="next">
+            <div class="arrow-down arr-side">
+              <span class="arrow-sm"><i class="fa fa-angle-right" style="font-size:50px"></i></span>
+              <span class="arrow-lg"><i class="fa fa-angle-right" style="font-size:80px"></i></span>
+              <span class="arrow-sm"><i class="fa fa-angle-right" style="font-size:50px"></i></span>
             </div>
-          </div>
-          <div class="project">
-            <div class="overlay">
-              <div class="text"> World</div>
-            </div>
-          </div>
-          <div class="project">
-            <div class="overlay">
-              <div class="text">Hell World</div>
-            </div>
-          </div>
+          </a>
         </div>
       </div>
-      <div class="heading" id="experience">Experience</div>
+      <div class="heading" id="experience">Experience
+
+      </div>
       <div class="heading" id="contact">
         <p>Contact</p>
         <div class="arrow-down">
-          <span class="arrow-sm"><i class="fa fa-angle-up" style="font-size:50px"></i></span>
-          <span class="arrow-lg"><i class="fa fa-angle-up" style="font-size:80px"></i></span>
-          <span class="arrow-sm"><i class="fa fa-angle-up" style="font-size:50px"></i></span>
+          <a class="arrow-sm" href="#top"><i class="fa fa-angle-up" style="font-size:50px"></i></a>
+          <a class="arrow-lg" href="#top"><i class="fa fa-angle-up" style="font-size:80px"></i></a>
+          <a class="arrow-sm" href="#top"><i class="fa fa-angle-up" style="font-size:50px"></i></a>
         </div>
       </div>
     </div>
   </main>
-
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
 
   <script src="./dist/js/final.js"></script>
 

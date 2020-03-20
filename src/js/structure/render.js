@@ -6,7 +6,7 @@ import uos from 'uos';
 
 export default function render() {
   props.renderer.render(props.scene, props.camera);
-  props.structure.cube.rotation.x += 0.05;
+  props.structure.cube.rotation.x -= 0.05;
 }
 const windowResizeHandler = () => {
   props.camera.aspect = window.innerWidth / window.innerHeight;
@@ -28,10 +28,11 @@ export const initUOS = () => {
   uos(0, 0.05, p => (header.style.opacity = 1 - p));
   uos(0, 1, p => {
     console.log('p&', p);
-    if (p < .8)
-      props.structure.cube.position.set(15, 12.5 - p * window.innerHeight / 32, 0);
+    if (p < .8) {
+      props.structure.cube.position.set(window.innerWidth / 70, 12.5 - p * window.innerHeight / 32, 0);
+    }
     // props.structure.cube.translation.y += p
-
+    console.log('window.innerHeight / 70 :', window.innerWidth);
 
   });
 
@@ -47,8 +48,7 @@ export const initUOS = () => {
       let np = p * 2.0 - 1.0;
       np = 1.0 - np * np;
       headings[i].style.opacity = i === instances.length - 1 ? p * 1.5 : np * 1.5;
-      if (header.style.opacity < .3) {
-        console.log('object');
+      if (header.style.opacity < .3 && window.innerWidth > 1000) {
         props.structure.cube.visible = true;
       }
       else props.structure.cube.visible = false;

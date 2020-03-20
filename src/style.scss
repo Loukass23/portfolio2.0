@@ -1,6 +1,31 @@
 $primary-color: #aa3377;
 $raindowtext: linear-gradient(40deg, #97178c 0%, #d6716d 50%, #a0fafb 100%);
 $whitish-text : #c6c8ce;
+$breakpoints: ('small': 767px,
+  'medium': 992px,
+  'large': 1200px) !default;
+
+@mixin respond-to($breakpoint) {
+
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    // Prints a media query based on the value
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+    +"Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 #title {
   color: $primary-color;
@@ -80,6 +105,11 @@ canvas {
 }
 
 .arrow-sm {
+  &:hover {
+    color: white;
+    opacity: 1;
+  }
+
   color: $primary-color;
   padding: 20;
   animation-name: arrow-anim;
@@ -90,6 +120,11 @@ canvas {
 }
 
 .arrow-lg {
+  &:hover {
+    color: white;
+    opacity: 1;
+  }
+
   color: $primary-color;
   padding: 20;
   animation-name: arrow-anim;
@@ -100,10 +135,17 @@ canvas {
   -webkit-animation-direction: alternate-reverse;
 }
 
+.arr-side {
+  &:hover {
+    color: white;
+    opacity: 1;
+  }
+}
+
 .arrow-down {
   display: flex;
   // flex-direction: column;
-  margin-top: 10rem;
+  padding-top: 10rem;
 
 }
 
@@ -150,8 +192,12 @@ canvas {
   opacity: 0;
 }
 
+
+
 .header__title {
-  font-size: 6rem;
+  font-size: 4rem;
+  padding-top: 10rem;
+
   text-align: center;
   text-transform: uppercase;
   margin-bottom: 0px;
@@ -165,7 +211,17 @@ canvas {
   font-weight: 100;
   letter-spacing: 0.5vw;
 
+  @include respond-to('medium') {
+    font-size: 6rem;
+
+  }
 }
+
+// @media (min-width: 767px) {
+//   .header__title {
+//     color: blue;
+//   }
+// }
 
 .header__text {
   font-size: 2rem;
@@ -193,18 +249,17 @@ canvas {
   left: 50%;
   transform: translateX(-50%);
   padding: 0 40px;
+  height: 100vh;
+
 }
 
 .project {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  width: 400px;
+  width: 60vw;
   height: 400px;
-  background-color: rgba(255, 255, 255, 0.24);
-  margin-top: 10px;
-  margin-left: 10px;
-
+  background-color: $whitish-text;
 }
 
 .project-details {
@@ -224,6 +279,7 @@ canvas {
   flex-wrap: wrap;
   z-index: 9999;
   overflow-y: auto;
+
 }
 
 .overlay {
@@ -293,4 +349,142 @@ canvas {
   100% {
     background-position: 1000px;
   }
+}
+
+* {
+  box-sizing: border-box
+}
+
+body {
+  font-family: Verdana, sans-serif;
+  margin: 0
+}
+
+.mySlides {
+  display: none
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+
+  .prev,
+  .next,
+  .text {
+    font-size: 11px
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE and Edge */
+body {
+  -ms-overflow-style: none;
 }
