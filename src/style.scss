@@ -245,7 +245,7 @@ canvas {
   font-size: 1.5rem;
   text-align: center;
   color: white;
-  max-width: calc(100% - 80px);
+  // max-width: calc(100% - 80px);
   left: 50%;
   transform: translateX(-50%);
   padding: 0 40px;
@@ -258,8 +258,9 @@ canvas {
   justify-content: space-around;
   align-items: center;
   width: 60vw;
-  height: 400px;
-  background-color: $whitish-text;
+  height: 60vh;
+  background-color: white;
+  color: black;
 }
 
 .project-details {
