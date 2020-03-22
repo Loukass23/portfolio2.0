@@ -296,7 +296,7 @@ export default () => {
     stripsCount: 20,
   });
 
-  props.scene.add(props.backgroundParticlesGroup);
+  // props.scene.add(props.backgroundParticlesGroup);
 
   // props.structure.cube = new THREE.Mesh(geometry, material);
   // props.structure.cube.rotation.y = -0.6

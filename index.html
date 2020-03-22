@@ -86,22 +86,23 @@
           </tbody>
         </table>
       </div>
-      <div class="heading row" id="projects">
-        <div class="projects col-xs-12">
-          <a class="carousel-control-prev" href="#carouselProjects" role="button" data-slide="prev">
+      <div class="heading" id="projects">
+        <div class="projects row">
+          <a id="carousel-control-prev" class="carousel-control-prev col-sx-12" href="#carouselProjects" role="button"
+            data-slide="prev">
             <div class="arrow-down arr-side">
               <span class="arrow-sm"><i class="fa fa-angle-left" style="font-size:50px"></i></span>
               <span class="arrow-lg"><i class="fa fa-angle-left" style="font-size:80px"></i></span>
               <span class="arrow-sm"><i class="fa fa-angle-left" style="font-size:50px"></i></span>
             </div>
           </a>
-          <div id="carouselProjects" class="carousel slide" data-pause="hover" data-keyboard="true" data-touch="true"
-            au>
+          <div id="carouselProjects" class="carousel slide  col-sx-12 col-md-8" data-pause="hover" data-keyboard="true"
+            data-touch="true" au>
 
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <h4>Projects</h4>
-                <div class=" row project">
+                <div class="  project">
                   <div class="col-sx-12 col-md-6">
                     <h4>Football Web App</h4>
                     <div class="row d-flex justify-content-center">
@@ -123,6 +124,36 @@
                   <div class="col-sx-12 col-md-4">
                     <video className="video-fluid pr-2" width="auto" height="400px" controls autoPlay={true} loop muted>
                       <source src="./assets/img/football app.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <h4>Projects</h4>
+                <div class=" project">
+                  <div class="col-sx-12 col-md-6">
+                    <h4>Map Event</h4>
+                    <div class="row d-flex justify-content-center">
+                      <i class="fab fa-2x fa-java"></i>
+                      <i class="fab fa-2x fa-vuejs"></i>
+                      <i class="fab fa-2x fa-js"></i>
+                      <i class="fab fa-2x fa-html5"></i>
+                      <i class="fab fa-2x fa-css3"></i>
+                    </div>
+                    <p>Full stack app for community event sharing</p>
+                    <ul>
+                      <li>Full Stack</li>
+                      <li>Typescipt</li>
+                      <li>Back end: NodeJS, GraphQL, MongoDB</li>
+                      <li>Front end: Javascript, React Native , GoogleMap API</li>
+                    </ul>
+                    <div>
+                      <a href="https://github.com/Loukass23/battleship" target="_blank">Source</a>
+                    </div>
+                  </div>
+                  <div class="col-sx-12 col-md-4">
+                    <video class="video-fluid pr-2" width="auto" height="300px" controls autoPlay={true} loop muted>
+                      <source src="./assets/img/battleship.mp4" type="video/mp4" />
                     </video>
                   </div>
                 </div>
@@ -166,7 +197,8 @@
               <li data-target="#carouselProjects" data-slide-to="2"></li>
             </ol>
           </div>
-          <a class="carousel-control-next" href="#carouselProjects" role="button" data-slide="next">
+          <a id="carousel-control-next" class="carousel-control-next col-sx-12 col-md-2" href="#carouselProjects"
+            role="button" data-slide="next">
             <div class="arrow-down arr-side">
               <span class="arrow-sm"><i class="fa fa-angle-right" style="font-size:50px"></i></span>
               <span class="arrow-lg"><i class="fa fa-angle-right" style="font-size:80px"></i></span>
