@@ -303,8 +303,6 @@ canvas {
 }
 
 .project {
-
-
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -312,6 +310,30 @@ canvas {
   height: 70vh;
   background-color: white;
   color: black;
+  ul{
+    list-style: none
+  }
+  li{
+    font-size: 20px;
+
+    @include respond-to('medium') {
+      font-size: 1.5rem;
+    }
+  }
+  p{
+    font-size: 20px;
+
+    @include respond-to('medium') {
+      font-size: 1.5rem;
+    }
+  }
+  i{
+    font-size: 1em;
+
+    @include respond-to('medium') {
+      font-size: 2em;
+    }
+  }
 }
 
 .project-details {
@@ -368,7 +390,9 @@ canvas {
   text-align: center;
 }
 
-
+.carousel-indicators>li {
+  background-color:$primary-color;
+}
 
 
 .chrome {
@@ -407,10 +431,6 @@ canvas {
   box-sizing: border-box
 }
 
-body {
-  font-family: Verdana, sans-serif;
-  margin: 0
-}
 
 .mySlides {
   display: none

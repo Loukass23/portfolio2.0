@@ -44,49 +44,53 @@
         </div>
       </div>
       <div class="heading" id="skills">
-        <table className="table striped centered responsive-table">
-          <thead className="">
-            <tr>
-              <th>Front-End</th>
-              <th>Frameworks</th>
-              <th>Back-End</th>
-              <th>Dev Ops</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Javascript ES6</td>
-              <td>React/Rdux</td>
-              <td>Node.js</td>
-              <td>Git</td>
+
+        <div class="table-responsive">
+          <table class="table table-dark">
+            <thead>
+              <tr>
+                <th>Front-End</th>
+                <th>Frameworks</th>
+                <th>Back-End</th>
+                <th>Dev Ops</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Javascript ES6</td>
+                <td>React/Rdux</td>
+                <td>Node.js</td>
+                <td>Git</td>
 
 
-            </tr>
-            <tr>
-              <td>HTML5 / CSS3</td>
-              <td>Vue/VueX</td>
-              <td>Java</td>
-              <td>SCRUM/Agile</td>
+              </tr>
+              <tr>
+                <td>HTML5 / CSS3</td>
+                <td>Vue/VueX</td>
+                <td>Java</td>
+                <td>SCRUM/Agile</td>
 
 
-            </tr>
-            <tr>
-              <td>Materialize</td>
-              <td>Spring Boot</td>
-              <td>Firebase</td>
-              <td>UML/REST</td>
-            </tr>
-            <tr>
-              <td>Bootstrap</td>
-              <td>Express</td>
-              <td>MongoDB</td>
-              <td>OOM</td>
-
-            </tr>
-          </tbody>
-        </table>
+              </tr>
+              <tr>
+                <td>Materialize</td>
+                <td>Spring Boot</td>
+                <td>Firebase</td>
+                <td>UML/REST</td>
+              </tr>
+              <tr>
+                <td>Bootstrap</td>
+                <td>Express</td>
+                <td>MongoDB</td>
+                <td>OOM</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
       <div class="heading" id="projects">
+        <h4>Projects</h4>
+
         <div class="projects row">
           <a id="carousel-control-prev" class="carousel-control-prev col-sx-12" href="#carouselProjects" role="button"
             data-slide="prev">
@@ -101,8 +105,9 @@
 
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <h4>Projects</h4>
-                <div class="  project">
+
+
+                <div class="row project">
                   <div class="col-sx-12 col-md-6">
                     <h4>Football Web App</h4>
                     <div class="row d-flex justify-content-center">
@@ -129,8 +134,7 @@
                 </div>
               </div>
               <div class="carousel-item">
-                <h4>Projects</h4>
-                <div class=" project">
+                <div class="row project">
                   <div class="col-sx-12 col-md-6">
                     <h4>Map Event</h4>
                     <div class="row d-flex justify-content-center">
@@ -159,7 +163,6 @@
                 </div>
               </div>
               <div class="carousel-item">
-                <h4>Projects</h4>
                 <div class=" row project">
                   <div class="col-sx-12 col-md-6">
                     <h4>Battleship</h4>
@@ -171,7 +174,7 @@
                       <i class="fab fa-2x fa-css3"></i>
 
                     </div>
-                    >Full stack battleship video game </p>
+                    <p>Full stack battleship video game </p>
                     <ul>
                       <li>Full Stack</li>
                       <li>Object Oriented</li>
@@ -180,11 +183,11 @@
                     </ul>
                     <div className="row justify-content-center ">
                       <a href="https://github.com/Loukass23/battleship" target="_blank"
-                        className="btn btn-primary mx-2">Source</a>
+                        class="btn btn-primary mx-2">Source</a>
                     </div>
                   </div>
-                  <div class="col-sx-12 col-md-4">
-                    <video class="video-fluid pr-2" width="auto" height="300px" controls autoPlay={true} loop muted>
+                  <div class="col-sx-12 col-md-4 embed-responsive embed-responsive-4by3">
+                    <video class="video-fluid pr-2" controls autoPlay={true} loop muted>
                       <source src="./assets/img/battleship.mp4" type="video/mp4" />
                     </video>
                   </div>
